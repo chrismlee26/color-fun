@@ -180,17 +180,21 @@ ticker-tape {
 
 /* Color Swatches for Cart */
 .swatch {
-  width: 100px;
-  height: 100px;
+  width: 170px;
+  height: 150px;
+  background-color: red;
+  margin: 5px;
 }
 
-.swatch {
-  /* Remove this rule when you set your colors! */
-  background-color: red;
-  margin: 1px;
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 /* Forms */
+form {
+}
+
 label {
   font-family: var(--font-paragraph);
 }
