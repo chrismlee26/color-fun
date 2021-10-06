@@ -44,7 +44,7 @@ a {
 }
 
 main {
-  width: 600px;
+  width: 900px;
   margin: auto;
 }
 
@@ -53,7 +53,7 @@ main {
   background: black;
   position: fixed;
   top: 0%;
-  height: 10.5%;
+  height: 14%;
   width: 100%;
   left: 0%;
   overflow-x: hidden;
@@ -64,28 +64,30 @@ main {
 nav {
   top: 2%;
   position: fixed;
-  width: auto;
 }
 
 #nav > header > nav {
   display: flex;
+  width: 900px;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 #nav > header > nav > a {
   font-family: "Oswald", sans-serif;
   text-decoration: none;
-  color: white;
+  color: silver;
   padding: 8px 15px;
   border: 1px solid black;
   border-radius: 10%;
+  display: flex;
 }
 
-#nav > header > nav > a:active {
+#nav > header > nav > a:active,
+#nav > header > nav > a:hover {
   text-decoration: none;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: rgba(88, 80, 236);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -93,11 +95,18 @@ nav {
 /* Ticker tape animation */
 #banner {
   background: none;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   position: fixed;
-  top: 2.5%;
-  width: 600px;
-  margin: 0;
+  top: 5%;
+  width: 900px;
+  padding-top: -15px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 ticker-tape {
@@ -123,36 +132,37 @@ ticker-tape {
   animation: tickerMove linear 15s infinite;
 }
 
+/* About section */
 #about {
-  margin-top: 35%;
+  margin-top: 25%;
 }
 
-#about > header > h2 {
+#about > header > h1 {
   display: flex;
   justify-content: center;
+  color: rgba(88, 80, 236);
 }
 
 /* Cards */
 #popular {
-  width: 90%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
 }
 
 .card {
-  border: 1px solid red;
-  width: 600px;
-  box-shadow: inset 20px 20px 100px 10px white;
-  padding-bottom: 50px;
+  border: 2px solid rgba(88, 80, 236);
+  border-radius: 2%;
+  width: 400px;
+  padding-bottom: 5px;
+  margin: 10px 4px;
+  background-color: ;
 }
 
 .card > img {
-  opacity: 95;
   width: 100%;
 }
 
 .card > p {
-  background-color: green;
   font-family: var(--font-subheader);
 }
 
