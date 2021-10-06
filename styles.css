@@ -33,11 +33,14 @@ h4,
 h5,
 h6 {
   font-family: var(--font-subheader);
-  color: gray;
+  color: lightgray;
+  font-size: 2em;
 }
 
 a {
   font-family: var(--font-subheader);
+  color: var(--font-color);
+  font-weight: bold;
 }
 
 main {
@@ -45,26 +48,41 @@ main {
   margin: auto;
 }
 
-nav {
-  display: flex;
-  flex-direction: column;
+/* Navbar */
+.upper-block {
+  background: black;
   position: fixed;
-  top: 20%;
+  top: 0%;
+  height: 10.5%;
+  width: 100%;
   left: 0%;
-  padding-left: 1%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  opacity: 90%;
+}
+
+nav {
+  top: 2%;
+  position: fixed;
+  width: auto;
+}
+
+#nav > header > nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 #nav > header > nav > a {
-  font-family: "Inter", sans-serif;
+  font-family: "Oswald", sans-serif;
   text-decoration: none;
   color: white;
-  padding: 8px 12px;
-  border: 1px hidden #111;
+  padding: 8px 15px;
+  border: 1px solid black;
   border-radius: 10%;
 }
 
-#nav > header > nav > a:active,
-#nav > header > nav > a:hover {
+#nav > header > nav > a:active {
   text-decoration: none;
   color: black;
   background-color: white;
@@ -72,26 +90,27 @@ nav {
   transition: all 0.2s ease-in-out;
 }
 
-/* (A) FIXED WRAPPER */
+/* Ticker tape animation */
 #banner {
-  background: var(--main-color);
+  background: none;
   overflow: hidden;
+  position: fixed;
+  top: 2.5%;
+  width: 600px;
+  margin: 0;
 }
 
-/* (B) MOVING TICKER WRAPPER */
 ticker-tape {
   display: flex;
 }
 
-/* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
-#banner > ticker-tape > h1 {
+#banner > ticker-tape > h2 {
   width: 100%;
   box-sizing: border-box;
-  padding: 10px;
   text-align: center;
+  color: orange;
 }
 
-/* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
 @keyframes tickerMove {
   0% {
     transform: translate3d(100%, 0, 0);
@@ -100,11 +119,41 @@ ticker-tape {
     transform: translate3d(-100%, 0, 0);
   }
 }
-#banner > ticker-tape > h1 {
+#banner > ticker-tape > h2 {
   animation: tickerMove linear 15s infinite;
 }
-#banner > ticker-tape > h1:hover {
-  animation-play-state: paused;
+
+#about {
+  margin-top: 35%;
+}
+
+#about > header > h2 {
+  display: flex;
+  justify-content: center;
+}
+
+/* Cards */
+#popular {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  border: 1px solid red;
+  width: 600px;
+  box-shadow: inset 20px 20px 100px 10px white;
+  padding-bottom: 50px;
+}
+
+.card > img {
+  opacity: 95;
+  width: 100%;
+}
+
+.card > p {
+  background-color: green;
+  font-family: var(--font-subheader);
 }
 
 /* Color Swatches for Cart */
