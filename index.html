@@ -91,7 +91,7 @@
 				</header>
 				<div>
 					<form>
-						<label class="input_label">
+						<label>
 							name
 							<input type="text">
 						</label>
@@ -106,26 +106,25 @@
 							<textarea></textarea>
 						</label>
 
-						<label class="checkbox">
-							Sign up for the newsletter
-							<input type="checkbox">
-						</label>
+							<!-- Checkbox -->
+						<div class="choice-container">
+							<label>
+								Sign up for the newsletter
+								<input type="checkbox">
+							</label>
 
-						<label class="radio">
-							<input type="radio" name="user">
-							Artist
-						</label>
+							<!-- Radio -->
+							<input type=radio id="artist" name="user">
+							<label class="switch" for="artist">Artist</label>
 
-						<label class="radio">
-							<input type="radio" name="user">
-							Designer
-						</label>
+							<input type=radio id="designer" name="user">
+							<label class="switch" for="designer">Designer</label>
 
-						<label class="radio">
-							<input type="radio" name="user">
-							Enthusiast
-						</label>
-						<button>Submit</button>
+							<input type=radio id="enthusiast" name="user">
+							<label class="switch" for="enthusiast">Enthusiast</label>
+							
+							<button>Submit</button>
+						</div>
 					</form>
 				</div>
 			</section>
@@ -143,8 +142,6 @@
 		</main>
 
 		<script>
-			
-
 			// All 100 color swatches has a CSS custom property assigne to it. 
 			// You can use this color each swatch with a unique color. 
 
@@ -152,6 +149,7 @@
 			// --color-sample-1 : green
 			// ...
 			// --color-sample-99 : blue
+
 
 			// make some swatches 
 			const swatchCount = 100

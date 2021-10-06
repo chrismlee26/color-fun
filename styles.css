@@ -4,6 +4,7 @@
 :root {
   --main-color: #111;
   --font-color: #fff;
+  --fun-color: rgba(88, 80, 236);
   --font-header: "Playfair Display", serif;
   --font-subheader: "Oswald", sans-serif;
   --font-paragraph: "Inter", sans-serif;
@@ -87,7 +88,7 @@ nav {
 #nav > header > nav > a:hover {
   text-decoration: none;
   color: white;
-  background-color: rgba(88, 80, 236);
+  background-color: var(--fun-color);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -140,7 +141,7 @@ ticker-tape {
 #about > header > h1 {
   display: flex;
   justify-content: center;
-  color: rgba(88, 80, 236);
+  color: var(--fun-color);
 }
 
 /* Cards */
@@ -156,6 +157,7 @@ ticker-tape {
   padding-bottom: 40px;
   margin: 10px 4px;
   background-color: #151320;
+  box-shadow: 0 0 4px 2px rgba(99, 98, 98, 0.398);
 }
 
 .card > img {
@@ -192,9 +194,6 @@ ticker-tape {
 }
 
 /* Forms */
-form {
-}
-
 label {
   font-family: var(--font-paragraph);
 }
@@ -203,7 +202,7 @@ input,
 textarea {
   color: white;
   background-color: #111;
-  border: 2px solid rgba(88, 80, 236);
+  border: 2px solid var(--fun-color);
   border-radius: 2%/8%;
   padding: 1em 15em 1em 1em;
   cursor: pointer;
@@ -218,7 +217,57 @@ form > label > textarea {
   border-radius: 2%/8%;
 }
 
-.checkbox,
-.radio {
-  color: silver;
+/* Radio */
+
+input[type="radio"] {
+  display: none;
 }
+
+input[type="radio"] + label {
+  padding-left: 28px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 2px;
+}
+
+input[type="radio"] + label::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  transition: 200ms;
+}
+
+input[type="radio"] + label::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: inline-block;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  transition: 200ms;
+}
+
+input[type="radio"]:checked + label::after {
+  background-color: tomato;
+}
+
+input[type="radio"]:checked + label::before {
+  background-color: tomato;
+}
+
+.choice-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* #sourceMappingURL=styles.css.map; */
