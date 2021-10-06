@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Oswald:wght@300;500&family=Playfair+Display:wght@400;800&display=swap");
+
+:root {
+  background-color: black;
+  --font-header: "Playfair Display", serif;
+  --font-subheader: "Playfair Display", serif;
+  --font-paragraph: "Inter", sans-serif;
+}
+
+p {
+  color: white;
+  font-size: 18px;
+  font-family: var(--font-paragraph);
+}
+
+h1 {
+  font-family: var(--font-header);
+  color: white;
+  font-size: 3em;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-subheader);
+  color: gray;
+}
+
+.swatch {
+  width: 100px;
+  height: 100px;
+}
+
+.swatch {
+  /* Remove this rule when you set your colors! */
+  background-color: red;
+  margin: 1px;
+}
+
+main {
+  width: 600px;
+  margin: auto;
+}
+
+#nav {
+  top: 3%;
+  position: fixed;
+}
+
+#nav > header > nav > a {
+  text-decoration: none;
+  color: white;
+  border: 1px solid black;
+  border-radius: 10%;
+  padding: 20px;
+}
+
+#nav > header > nav > a:hover {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10%;
+  padding: 20px;
+}
+
+/* (A) FIXED WRAPPER */
+#banner {
+  margin-top: 4em;
+  background: black;
+  overflow: hidden;
+}
+
+/* (B) MOVING TICKER WRAPPER */
+ticker-tape {
+  display: flex;
+}
+
+/* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+#banner > ticker-tape > h1 {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+/* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+@keyframes tickerMove {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+#banner > ticker-tape > h1 {
+  animation: tickerMove linear 15s infinite;
+}
+#banner > ticker-tape > h1:hover {
+  animation-play-state: paused;
+}
